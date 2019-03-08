@@ -2,7 +2,7 @@
 #' @param object MODFLOW input file text object, starting with the free-format control record
 #' @return A list containing the array and the remaining text of the MODFLOW input file
 read_mt3dms_array <- function(remaining_lines, nrow, ncol, nlay, ndim = NULL) {
-  data_set <- RMODFLOW:::read_modflow_array(remaining_lines, nrow, ncol, nlay, ndim)
+  data_set <- RMODFLOW:::rmfi_parse_array(remaining_lines, nrow, ncol, nlay, ndim)
   class(data_set$array) <- gsub('modflow','mt3dms',class(data_set$array))
   return(data_set)
 }
@@ -11,7 +11,7 @@ read_mt3dms_array <- function(remaining_lines, nrow, ncol, nlay, ndim = NULL) {
 #' Read mt3dms variables
 #' If all are numbers, returns numeric, otherwise returns character vector
 read_mt3dms_variables <- function(remaining_lines) {
-  return(RMODFLOW:::read_modflow_variables(remaining_lines))
+  return(RMODFLOW:::rmfi_parse_variables(remaining_lines))
 }
 
 #' Remove empty elements from a vector of strings.

@@ -21,7 +21,7 @@ run_mt3dms_ss <- function(file,threshold,report=TRUE,report_plot=TRUE,maxit=100,
   it <- 0
   while(!convergence) {
     run_mt3dms(paste0(dir,'/',file),...)
-    nam <- read_nam(paste0(dir,'/',file))
+    nam <- rmf_read_nam(paste0(dir,'/',file))
     btn <- read_btn(paste0(dir,'/',nam$Fname[which(nam$ftype=='BTN')]))
     if(201 %in% nam$nunit) {
       ucn <- read_ucn(paste0(dir,'/',nam$Fname[which(nam$nunit==201)]),btn=btn)

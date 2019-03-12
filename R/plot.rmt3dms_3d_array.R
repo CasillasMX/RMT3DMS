@@ -20,5 +20,5 @@ plot.rmt3dms_3d_array <- function(rmt3dms_3d_array,
                                   mask = btn$icbund,
                                   ...) {
   dis <- convert_btn_to_dis(btn)
-  plot(RMODFLOW::create_rmodflow_array(rmt3dms_3d_array), dis = dis, mask = mask, i = i, j = j, k = k, ...)
+  plot(RMODFLOW::rmf_crate_array(rmt3dms_3d_array), dis = dis, mask = mask, i = i, j = j, k = k, ...)
 }

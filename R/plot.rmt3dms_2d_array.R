@@ -14,5 +14,5 @@ plot.rmt3dms_2d_array <- function(rmt3dms_2d_array,
                                   mask = {warning('Using first icbund layer as mask.', call. = FALSE);btn$icbund[,,1]},
                                   ...) {
   dis <- convert_btn_to_dis(btn)
-  plot(create_rmodflow_array(rmt3dms_2d_array), dis=dis, mask = mask, ...)
+  plot(RMODFLOW::rmf_create_array(rmt3dms_2d_array), dis=dis, mask = mask, ...)
 }

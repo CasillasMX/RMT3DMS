@@ -10,5 +10,5 @@
 cell_coordinates.btn <- function(btn,
                                  include_faces = FALSE) {
   dis <- convert_btn_to_dis(btn)
-  return(cell_coordinates(dis = dis, include_faces = include_faces))
+  return(rmf_cell_coordinates(dis = dis, include_faces = include_faces))
 }

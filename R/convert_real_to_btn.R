@@ -10,6 +10,6 @@
 #' @return data frame with x, y, z, i, j, k, roff, coff and loff modflow coordinates
 #' @export
 convert_real_to_btn <- function(x,y,prj,z=NULL,btn=NULL) {
-  RMODFLOW::rmf_convert_real_to_dis(x = x, y = y, prj = prj, z = z, dis = convert_btn_to_dis(btn))
+  RMODFLOW::rmf_convert_xyz_to_grid(x = x, y = y, prj = prj, z = z, dis = convert_btn_to_dis(btn))
 }
 ?convert_real_to_btn

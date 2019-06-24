@@ -109,7 +109,7 @@ read_btn <- function(file = {cat('Please select btn file ...\n'); file.choose()}
     rm(data_set_a15)
   
   # Data set A16
-    btn$nprs <- as.numeric(remove_empty_srings(strsplit(btn_lines[1],' ')[[1]]))
+    btn$nprs <- as.numeric(remove_empty_strings(strsplit(btn_lines[1],' ')[[1]]))
     btn_lines <- btn_lines[-1]
     
   # Data set A17

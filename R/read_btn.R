@@ -31,7 +31,7 @@ read_btn <- function(file = {cat('Please select btn file ...\n'); file.choose()}
     rm(data_set_a3)
   
   # Data set A4
-    data_set_a4 <- RMT3DMS:::remove_empty_strings(strsplit(btn_lines[1],' ')[[1]])
+    data_set_a4 <- remove_empty_strings(strsplit(btn_lines[1],' ')[[1]])
     btn_lines <- btn_lines[-1]  
     btn$tunit <- data_set_a4[1]
     btn$lunit <- data_set_a4[2]
@@ -39,11 +39,11 @@ read_btn <- function(file = {cat('Please select btn file ...\n'); file.choose()}
     rm(data_set_a4)
   
   # Data set A5
-    btn$trnop <- as.logical(RMT3DMS:::remove_empty_strings(strsplit(btn_lines[1],' ')[[1]]))
+    btn$trnop <- as.logical(remove_empty_strings(strsplit(btn_lines[1],' ')[[1]]))
     btn_lines <- btn_lines[-1]  
     
   # Data set A6
-    btn$laycon <- as.numeric(RMT3DMS:::remove_empty_strings(strsplit(btn_lines[1],' ')[[1]]))
+    btn$laycon <- as.numeric(remove_empty_strings(strsplit(btn_lines[1],' ')[[1]]))
     btn_lines <- btn_lines[-1]
           
   # Data set A7
@@ -92,14 +92,14 @@ read_btn <- function(file = {cat('Please select btn file ...\n'); file.choose()}
     }
   
   # Data set A14
-    data_set_a14 <- as.numeric(RMT3DMS:::remove_empty_strings(strsplit(btn_lines[1],' ')[[1]]))
+    data_set_a14 <- as.numeric(remove_empty_strings(strsplit(btn_lines[1],' ')[[1]]))
     btn$cinact <- data_set_a14[1]
     btn$thkmin <- data_set_a14[2]
     btn_lines <- btn_lines[-1]
     rm(data_set_a14)
   
   # Data set A15
-    data_set_a15 <- RMT3DMS:::remove_empty_strings(strsplit(btn_lines[1],' ')[[1]])
+    data_set_a15 <- remove_empty_strings(strsplit(btn_lines[1],' ')[[1]])
     btn$ifmtcn <- as.numeric(data_set_a15[1])
     btn$ifmtnp <- as.numeric(data_set_a15[2])
     btn$ifmtrf <- as.numeric(data_set_a15[3])
@@ -115,12 +115,12 @@ read_btn <- function(file = {cat('Please select btn file ...\n'); file.choose()}
   # Data set A17
     if(btn$nprs > 0) {
       nLines <- (btn$nprs %/% 8 + ifelse((btn$nprs %% 8)==0, 0, 1))
-      btn$timprs <- as.numeric(RMT3DMS:::remove_empty_strings(strsplit(paste(btn_lines[1:nLines],collapse='\n'),' |\t|\n| \n|\n ')[[1]]))
+      btn$timprs <- as.numeric(remove_empty_strings(strsplit(paste(btn_lines[1:nLines],collapse='\n'),' |\t|\n| \n|\n ')[[1]]))
       btn_lines <- btn_lines[-c(1:nLines)]
     }
   
   # Data set A18
-    data_set_a18 <- as.numeric(RMT3DMS:::remove_empty_strings(strsplit(btn_lines[1],' ')[[1]]))
+    data_set_a18 <- as.numeric(remove_empty_strings(strsplit(btn_lines[1],' ')[[1]]))
     btn$nobs <- data_set_a18[1]
     btn$nprobs <- data_set_a18[2]
     btn_lines <- btn_lines[-1]
@@ -132,7 +132,7 @@ read_btn <- function(file = {cat('Please select btn file ...\n'); file.choose()}
       btn$iobs <- NULL
       btn$jobs <- NULL
       for(i in 1:btn$nobs) {
-        data_set_a19 <- as.numeric(RMT3DMS:::remove_empty_strings(strsplit(btn_lines[1],' ')[[1]]))
+        data_set_a19 <- as.numeric(remove_empty_strings(strsplit(btn_lines[1],' ')[[1]]))
         btn$kobs[i] <- data_set_a19[1]
         btn$iobs[i] <- data_set_a19[2]
         btn$jobs[i] <- data_set_a19[3]
@@ -142,7 +142,7 @@ read_btn <- function(file = {cat('Please select btn file ...\n'); file.choose()}
     }
   
   # Data set A20
-    data_set_a20 <- RMT3DMS:::remove_empty_strings(strsplit(btn_lines[1],' ')[[1]])
+    data_set_a20 <- remove_empty_strings(strsplit(btn_lines[1],' ')[[1]])
     btn$chkmas <- as.logical(data_set_a20[1])
     btn$nprmas <- as.numeric(data_set_a20[2])
     btn_lines <- btn_lines[-1]
@@ -159,7 +159,7 @@ read_btn <- function(file = {cat('Please select btn file ...\n'); file.choose()}
   
   for(i in 1:btn$nper) {  
     # Data set A21
-      data_set_a21 <- RMT3DMS:::remove_empty_strings(strsplit(btn_lines[1],' ')[[1]])
+      data_set_a21 <- remove_empty_strings(strsplit(btn_lines[1],' ')[[1]])
       btn$perlen[i] <- as.numeric(data_set_a21[1])
       btn$nstp[i] <- as.numeric(data_set_a21[2])
       btn$tsmult[i] <- as.numeric(data_set_a21[3])
@@ -173,12 +173,12 @@ read_btn <- function(file = {cat('Please select btn file ...\n'); file.choose()}
     # Data set A22
       if(btn$tsmult[i] <= 0) {
         nLines <- (btn$nstp %/% 8 + ifelse((btn$nprs %% 8)==0, 0, 1))
-        btn$tslngh[[i]] <- as.numeric(RMT3DMS:::remove_empty_strings(strsplit0(paste(btn_lines[1:nLines],collapse='\n'),' |\t|\n| \n|\n ')[[1]]))
+        btn$tslngh[[i]] <- as.numeric(remove_empty_strings(strsplit0(paste(btn_lines[1:nLines],collapse='\n'),' |\t|\n| \n|\n ')[[1]]))
         btn_lines <- btn_lines[-c(1:nLines)]
       }
     
     # Data set A23
-      data_set_a23 <- as.numeric(RMT3DMS:::remove_empty_strings(strsplit(btn_lines[1],' ')[[1]]))
+      data_set_a23 <- as.numeric(remove_empty_strings(strsplit(btn_lines[1],' ')[[1]]))
       btn$dt0[i] <- data_set_a23[1]
       btn$mxstrn[i] <- data_set_a23[2]
       btn$ttsmult[i] <- data_set_a23[3]

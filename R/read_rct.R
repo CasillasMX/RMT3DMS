@@ -14,7 +14,7 @@ read_rct <- function(file = {cat('Please select rct file ...\n'); file.choose()}
   rct <- NULL
   
   # Data set E1
-    data_set_e1 <- as.numerical(remove_empty_strings(strsplit(rct_lines[1],' ')[[1]]))
+    data_set_e1 <- as.numeric(remove_empty_strings(strsplit(rct_lines[1],' ')[[1]]))
     rct$isothm <- data_set_e1[1]
     rct$ireact <- data_set_e1[2]
     rct$irctop <- data_set_e1[3]
